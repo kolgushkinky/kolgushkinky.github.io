@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>My First Post</title>
+      <link>/posts/my-first-post/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/my-first-post/</guid>
+      <description>Time to start Hi there!
+I&amp;rsquo;ve made a decision to switch my career from a support engineer on Windows to a DevOps engineer. However, I have a lot to learn before that, Linux and network basics to name few.
+I start this blog to kick myself learning harder by explaining things. Or as solutions storage. Time will show.</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>/about/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
