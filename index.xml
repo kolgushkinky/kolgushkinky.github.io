@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kkol</title>
+    <link>/</link>
+    <description>Recent content on kkol</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Hi there My name is Konstantin. And welcome to my personal blog!
+I&amp;rsquo;m glad to announce that I&amp;rsquo;ve started my fabulous DevOps path and I solemnly swear to share any useful knowledge I get on the way.
+So far, I&amp;rsquo;m learning Linux (RHCSA), networking (CCNA) and python. Basic stuff goes first. Hope it will be usuful for all of us.
+Find me and contact at:
+ linkedin telegram github  </description>
+    </item>
+    
+  </channel>
+</rss>
