@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>kkol</title>
-    <link>/</link>
-    <description>Recent content on kkol</description>
+    <title>linux on kkol</title>
+    <link>/tags/linux/</link>
+    <description>Recent content in linux on kkol</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,17 +18,6 @@
       
       <guid>/posts/vim/</guid>
       <description>It&amp;rsquo;s hard to quit using it. But just for the first time. After notepad++ on Windows, linux terminal text editors look unusual. Nano is just simple with prompts, otherwise vim is hard to handle. First time I opened vim, I had to close terminal itself, because I didn&amp;rsquo;t realize how to quit. I watched some Sander van Vugt&amp;rsquo;s explanations on using vim, before I returned to it. And finally weeks later I revealed vim tutor, which is definitely a firm first step.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description>Hi there My name is Konstantin and welcome to my personal blog!
-I&amp;rsquo;m glad to announce that I&amp;rsquo;ve started my fabulous DevOps path and I solemnly swear to share all useful knowledge I get on the way.
-For now, I&amp;rsquo;m learning Linux (RHCSA), networking (CCNA) and python. Basic stuff goes first, but I plan to gradually complicate articles (as I learn new). Hope this blog will be usuful for all of us.</description>
     </item>
     
   </channel>

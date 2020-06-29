@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/vim/</loc>
+    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vim/</loc>
+    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/about/</loc>
     <lastmod>2020-05-01T00:00:00+00:00</lastmod>
   </url>
@@ -14,10 +39,6 @@
   
   <url>
     <loc>/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
   </url>
   
 </urlset>
