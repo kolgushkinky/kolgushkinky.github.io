@@ -14,8 +14,9 @@
       
       <guid>/posts/secrets/</guid>
       <description>No more hidden secrets. Not only Vault is used for storing secrets. You can keep them right in your Rancher environment. Though, if you may easily view values in Vault, in Rancher you have to know where to look for.
-You can list your secrets, and view a particular one in API. That&amp;rsquo;s what I did, and saw: value: null
-Still, I was sure the secret had been set. Thanks to the following article, the solution was found: Go to the container&amp;rsquo;s shell, and</description>
+You can list your secrets, and view a particular one in API. That&amp;rsquo;s what I did, and saw:
+ value: null
+ Still, I was sure the secret had been set.</description>
     </item>
     
     <item>
@@ -35,7 +36,7 @@ Still, I was sure the secret had been set. Thanks to the following article, the 
       <guid>/about/</guid>
       <description>Hi there My name is Konstantin and welcome to my personal blog!
 I&amp;rsquo;m glad to announce that I&amp;rsquo;ve started my fabulous DevOps path and I solemnly swear to share all useful knowledge I get on the way.
-For now, I&amp;rsquo;m learning Linux (RHCSA), networking (CCNA) and python. Basic stuff goes first, but I plan to gradually complicate articles (as I learn new). Hope this blog will be usuful for all of us.</description>
+For now, I&amp;rsquo;m learning Linux (RHCSA), networking (CCNA) and Go. Basic stuff goes first, but I plan to gradually complicate articles (as I learn new). Hope this blog will be usuful for all of us.</description>
     </item>
     
   </channel>

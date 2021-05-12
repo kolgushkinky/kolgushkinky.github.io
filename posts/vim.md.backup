@@ -1,0 +1,24 @@
++++
+title = "Vim"
+date = "2020-06-29"
+author = "kkol"
+tags = ["vim", "linux"]
+keywords = ["vim", "linux"]
+description = "My vim experience"
+showFullContent = false
++++
+
+# It's hard to quit using it. But just for the first time. 
+
+After notepad++ on Windows, linux terminal text editors look unusual. Nano is just simple with prompts, otherwise vim is hard to handle. First time I opened vim, I had to close terminal itself, because I didn't realize how to quit. I watched some Sander van Vugt's explanations on using vim, before I returned to it. And finally weeks later I revealed vim tutor, which is definitely a firm first step. Just type 
+<br><br>
+> `vimtutor`
+
+and learn by practising.
+Vim is not that hard as it firstly seems.
+
+# Some useful links
+
+[**A Vim Guide for Advanced Users**](https://thevaluable.dev/vim-advanced/)
+
+[**Vim-go plugin**](https://github.com/fatih/vim-go)
