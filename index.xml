@@ -6,7 +6,7 @@
     <description>Recent content on kkol</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>/about/</link>
@@ -16,6 +16,17 @@
       <description>Welcome to My Blog! Hi, I&amp;rsquo;m Konstantin Kolgushkin, and welcome to my personal blog!
 As a dedicated DevOps/SRE enthusiast, I&amp;rsquo;m diving deep into Linux, networking, and Go. This blog is where I share my journey, from foundational topics to more advanced concepts, as I continue to grow in these fields.
 I aim to make this blog a valuable resource for anyone interested in DevOps and SRE. You&amp;rsquo;ll find insights, tutorials, and updates based on my ongoing projects and learning experiences.</description>
+    </item>
+    
+    <item>
+      <title>Exploring Observability with OpenTelemetry and Jaeger</title>
+      <link>/posts/jaeger/</link>
+      <pubDate>Tue, 06 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/jaeger/</guid>
+      <description>I have a Telegram echo-bot written in Go, running locally on my laptop. As a DevOps/SRE enthusiast, I wanted to enhance it with logging and observability. After seeing OpenTelemetry mentioned in several job postings, I decided to configure it to add observability to my project.
+OpenTelemetry offers two main options for instrumentation:
+Zero-code instrumentation: Automatic and minimal setup. Code-based instrumentation: Requires modifications to the codebase. I chose the first option for its simplicity and ease of use.</description>
     </item>
     
     <item>
@@ -38,17 +49,6 @@ Still, I was sure the secret had been set. Thanks to the following article, the 
       <guid>/posts/vim/</guid>
       <description>Surviving Vim: A Beginner&amp;rsquo;s Short Guide Switching from Notepad++ on Windows to Linux terminal text editors can be quite a shift. Nano is simple and user-friendly with its prompts, but Vim can be daunting at first. I remember when I first opened Vim, I struggled so much with its commands that I ended up closing the terminal because I couldn&amp;rsquo;t figure out how to quit.
 After some frustration, I watched explanations by Sander van Vugt to get a better grasp of Vim.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/posts/jaeger/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/jaeger/</guid>
-      <description>I have a Telegram echo-bot written in Go, running locally on my laptop. As a DevOps/SRE enthusiast, I wanted to enhance it with logging and observability. After seeing OpenTelemetry mentioned in several job postings, I decided to configure it to add observability to my project.
-OpenTelemetry offers two main options for instrumentation:
-Zero-code instrumentation: Automatic and minimal setup. Code-based instrumentation: Requires modifications to the codebase. I chose the first option for its simplicity and ease of use.</description>
     </item>
     
   </channel>

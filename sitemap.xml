@@ -5,11 +5,26 @@
     <loc>/about/</loc>
     <lastmod>2024-08-06T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/posts/jaeger/</loc>
+    <lastmod>2024-08-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/jaeger/</loc>
+    <lastmod>2024-08-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/observability/</loc>
+    <lastmod>2024-08-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/opentelemetry/</loc>
+    <lastmod>2024-08-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2024-08-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/rancher/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
@@ -20,9 +35,6 @@
     <loc>/posts/secrets/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/linux/</loc>
     <lastmod>2020-06-29T00:00:00+00:00</lastmod>
   </url><url>
@@ -31,8 +43,6 @@
   </url><url>
     <loc>/posts/vim/</loc>
     <lastmod>2020-06-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/jaeger/</loc>
   </url><url>
     <loc>/categories/</loc>
   </url>
