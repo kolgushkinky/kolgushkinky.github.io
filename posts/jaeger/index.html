@@ -154,18 +154,18 @@ Zero-code instrumentation: Automatic and minimal setup. Code-based instrumentati
 </ol>
 <p>I chose the first option for its simplicity and ease of use.</p>
 <p>To get started with OpenTelemetry&rsquo;s zero-code instrumentation for Go, I followed the documentation available on <a href="https://github.com/open-telemetry/opentelemetry-go-instrumentation/blob/main/docs/getting-started.md">GitHub</a>. The setup was straightforward:</p>
-<p><code>sudo OTEL_GO_AUTO_TARGET_EXE=/home/bin/service_executable OTEL_SERVICE_NAME=my_service OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318 ./otel-go-instrumentation</code></p>
+<p><code>sudo OTEL_GO_AUTO_TARGET_EXE=/home/bin/service_executable OTEL_SERVICE_NAME=my_service OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318 ./otel-go-instrumentation</code><!-- raw HTML omitted --></p>
 <p>However, I soon realized that I needed a collector and a visualization service for my traces and metrics. I considered two options:</p>
 <ol>
 <li><strong>Prometheus + Grafana</strong>: For collecting and visualizing metrics.</li>
 <li><strong>Jaeger</strong>: For trace collection.</li>
 </ol>
 <p>I decided to start with Jaeger. To run Jaeger using Docker, I used the <a href="https://hub.docker.com/r/jaegertracing/all-in-one/tags">all-in-one</a> image. The version 1.59 documentation lists various ports, and the <a href="https://github.com/hansehe/jaeger-all-in-one/blob/master/docker-compose.yml">docker-compose file</a> provides detailed comments on port usage:</p>
-<p><code>4317:4317 # OpenTelemetry Protocol (OTLP) over gRPC</code>
+<p><code>4317:4317 # OpenTelemetry Protocol (OTLP) over gRPC</code><br>
 <code>4318:4318 # OpenTelemetry Protocol (OTLP) over HTTP</code></p>
 <p>To start Jaeger, I ran:</p>
-<p><code>docker run -d --name jaeger -e COLLECTOR_OTLP_ENABLED=true -p 4317:4317 -p 4318:4318 -p 16686:16686 -p 14269:14269 jaegertracing/all-in-one:1.59</code></p>
-<p>Despite this setup, I encountered a <code>connection reset by peer</code> error. Checking the logs:</p>
+<p><code>docker run -d --name jaeger -e COLLECTOR_OTLP_ENABLED=true -p 4317:4317 -p 4318:4318 -p 16686:16686 -p 14269:14269 jaegertracing/all-in-one:1.59</code><!-- raw HTML omitted --></p>
+<p>Despite this setup, I encountered a <code>connection reset by peer</code> error. Checking the logs:<!-- raw HTML omitted --></p>
 <p><code>{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:1722799839.4332669,&quot;caller&quot;:&quot;app/server.go:318&quot;,&quot;msg&quot;:&quot;Starting GRPC server&quot;,&quot;port&quot;:16685,&quot;addr&quot;:&quot;:16685&quot;}</code>
 <code>{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:1722799839.4332783,&quot;caller&quot;:&quot;app/server.go:299&quot;,&quot;msg&quot;:&quot;Starting HTTP server&quot;,&quot;port&quot;:16686,&quot;addr&quot;:&quot;:16686&quot;}</code></p>
 <p>I changed <code>OTEL_EXPORTER_OTLP_ENDPOINT</code> to port 16686, though the Jaeger UI remained unchanged. Further reading in the <a href="https://github.com/open-telemetry/opentelemetry-go-instrumentation/blob/main/COMPATIBILITY.md">compatibility documentation</a> revealed that my application does not use any of the supported libraries:</p>
