@@ -15,8 +15,8 @@
       <guid>/posts/secrets/</guid>
       <description>No more hidden secrets. Not only Vault is used for storing secrets. You can keep them right in your Rancher environment. Though, if you may easily view values in Vault, in Rancher you have to know where to look for.
 You can list your secrets, and view a particular one in API. That&amp;rsquo;s what I did, and saw:
- value: null
- Still, I was sure the secret had been set.</description>
+value: null
+Still, I was sure the secret had been set. Thanks to the following article, the solution was found: Go to the container&amp;rsquo;s shell, and</description>
     </item>
     
     <item>
@@ -25,7 +25,19 @@ You can list your secrets, and view a particular one in API. That&amp;rsquo;s wh
       <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/vim/</guid>
-      <description>It&amp;rsquo;s hard to quit using it. But just for the first time. After notepad++ on Windows, linux terminal text editors look unusual. Nano is just simple with prompts, otherwise vim is hard to handle. First time I opened vim, I had to close terminal itself, because I didn&amp;rsquo;t realize how to quit. I watched some Sander van Vugt&amp;rsquo;s explanations on using vim, before I returned to it. And finally weeks later I revealed vim tutor, which is definitely a firm first step.</description>
+      <description>Surviving Vim: A Beginner&amp;rsquo;s Short Guide Switching from Notepad++ on Windows to Linux terminal text editors can be quite a shift. Nano is simple and user-friendly with its prompts, but Vim can be daunting at first. I remember when I first opened Vim, I struggled so much with its commands that I ended up closing the terminal because I couldn&amp;rsquo;t figure out how to quit.
+After some frustration, I watched explanations by Sander van Vugt to get a better grasp of Vim.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/posts/jaeger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/jaeger/</guid>
+      <description>I have a Telegram echo-bot written in Go, running locally on my laptop. As a DevOps/SRE enthusiast, I wanted to enhance it with logging and observability. After seeing OpenTelemetry mentioned in several job postings, I decided to configure it to add observability to my project.
+OpenTelemetry offers two main options for instrumentation:
+Zero-code instrumentation: Automatic and minimal setup. Code-based instrumentation: Requires modifications to the codebase. I chose the first option for its simplicity and ease of use.</description>
     </item>
     
   </channel>

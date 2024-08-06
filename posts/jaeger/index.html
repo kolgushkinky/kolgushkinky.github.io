@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title> :: kkol — True story</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="I have a Telegram echo-bot written in Go, running locally on my laptop. As a DevOps/SRE enthusiast, I wanted to enhance it with logging and observability. After seeing OpenTelemetry mentioned in several job postings, I decided to configure it to add observability to my project.
+OpenTelemetry offers two main options for instrumentation:
+Zero-code instrumentation: Automatic and minimal setup. Code-based instrumentation: Requires modifications to the codebase. I chose the first option for its simplicity and ease of use." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/jaeger/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/img/favicon/blue.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="" />
+
+<meta name="twitter:creator" content="" />
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content=" :: kkol">
+<meta property="og:description" content="I have a Telegram echo-bot written in Go, running locally on my laptop. As a DevOps/SRE enthusiast, I wanted to enhance it with logging and observability. After seeing OpenTelemetry mentioned in several job postings, I decided to configure it to add observability to my project.
+OpenTelemetry offers two main options for instrumentation:
+Zero-code instrumentation: Automatic and minimal setup. Code-based instrumentation: Requires modifications to the codebase. I chose the first option for its simplicity and ease of use." />
+<meta property="og:url" content="/posts/jaeger/" />
+<meta property="og:site_name" content="" />
+
+  
+    <meta property="og:image" content="/img/favicon/blue.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    kkol
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/posts/jaeger/"></a></h1>
+  <div class="post-meta">
+      
+    
+  </div>
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>I have a Telegram <a href="https://github.com/kolgushkinky/echo-bot/">echo-bot</a> written in Go, running locally on my laptop. As a DevOps/SRE enthusiast, I wanted to enhance it with logging and observability. After seeing OpenTelemetry mentioned in several job postings, I decided to configure it to add observability to my project.</p>
+<p>OpenTelemetry offers two main options for instrumentation:</p>
+<ol>
+<li><strong>Zero-code instrumentation</strong>: Automatic and minimal setup.</li>
+<li><strong>Code-based instrumentation</strong>: Requires modifications to the codebase.</li>
+</ol>
+<p>I chose the first option for its simplicity and ease of use.</p>
+<p>To get started with OpenTelemetry&rsquo;s zero-code instrumentation for Go, I followed the documentation available on <a href="https://github.com/open-telemetry/opentelemetry-go-instrumentation/blob/main/docs/getting-started.md">GitHub</a>. The setup was straightforward:</p>
+<p><code>sudo OTEL_GO_AUTO_TARGET_EXE=/home/bin/service_executable OTEL_SERVICE_NAME=my_service OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318 ./otel-go-instrumentation </code>
+However, I soon realized that I needed a collector and a visualization service for my traces and metrics. I considered two options:</p>
+<ol>
+<li><strong>Prometheus + Grafana</strong>: For collecting and visualizing metrics.</li>
+<li><strong>Jaeger</strong>: For trace collection.</li>
+</ol>
+<p>I decided to start with Jaeger. To run Jaeger using Docker, I used the <a href="https://hub.docker.com/r/jaegertracing/all-in-one/tags">all-in-one</a> image. The version 1.59 documentation lists various ports, and the <a href="https://github.com/hansehe/jaeger-all-in-one/blob/master/docker-compose.yml">docker-compose file</a> provides detailed comments on port usage:</p>
+<p><code>4317:4317 # OpenTelemetry Protocol (OTLP) over gRPC  </code>4318:4318 # OpenTelemetry Protocol (OTLP) over HTTP`</p>
+<p>To start Jaeger, I ran:</p>
+<p><code>docker run -d --name jaeger -e COLLECTOR_OTLP_ENABLED=true -p 4317:4317 -p 4318:4318 -p 16686:16686 -p 14269:14269 jaegertracing/all-in-one:1.59 </code>
+Despite this setup, I encountered a <code>connection reset by peer</code> error. Checking the logs:
+<code>{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:1722799839.4332669,&quot;caller&quot;:&quot;app/server.go:318&quot;,&quot;msg&quot;:&quot;Starting GRPC server&quot;,&quot;port&quot;:16685,&quot;addr&quot;:&quot;:16685&quot;}</code>
+<code>{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:1722799839.4332783,&quot;caller&quot;:&quot;app/server.go:299&quot;,&quot;msg&quot;:&quot;Starting HTTP server&quot;,&quot;port&quot;:16686,&quot;addr&quot;:&quot;:16686&quot;} </code></p>
+<p>I changed <code>OTEL_EXPORTER_OTLP_ENDPOINT</code> to port 16686, though the Jaeger UI remained unchanged. Further reading in the <a href="https://github.com/open-telemetry/opentelemetry-go-instrumentation/blob/main/COMPATIBILITY.md">compatibility documentation</a> revealed that my application does not use any of the supported libraries:</p>
+<ul>
+<li><code>database/sql</code></li>
+<li><code>github.com/segmentio/kafka-go</code></li>
+<li><code>google.golang.org/grpc</code></li>
+<li><code>net/http</code></li>
+</ul>
+<p>As mentioned in a <a href="https://medium.com/jaegertracing/introducing-native-support-for-opentelemetry-in-jaeger-eb661be8183c">Medium article</a>, there might be limitations in the native support for OpenTelemetry, suggesting the use of the OpenTelemetry Collector for more comprehensive observability.</p>
+
+      </div></div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="/posts/vim/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Vim</span>
+        </a>
+      </span>
+      
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2024 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
